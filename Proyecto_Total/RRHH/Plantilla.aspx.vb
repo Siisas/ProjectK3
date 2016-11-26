@@ -36,10 +36,16 @@
     Public Sub ConsultaDDl()
 
         Drl_Categoria.DataSource = ObjProductosCafeteria.CargarDatosDDlProductos()
-        Drl_Categoria.DataTextField = "IdCategoria"
-        Drl_Categoria.DataValueField = "IdCategoria"
+        Drl_Categoria.DataTextField = "Categoria"
+        Drl_Categoria.DataValueField = "Categoria"
         Drl_Categoria.DataBind()
         Drl_Categoria.Items.Insert(0, "- Seleccione -")
+        Drl_NombreProducto.DataSource = ObjProductosCafeteria.CargarDatosDDlProductos()
+        Drl_NombreProducto.DataTextField = "NombreProducto"
+        Drl_NombreProducto.DataValueField = "NombreProducto"
+        Drl_NombreProducto.DataBind()
+        Drl_NombreProducto.Items.Insert(0, "-Seleccione-")
+
 
     End Sub
 End Class

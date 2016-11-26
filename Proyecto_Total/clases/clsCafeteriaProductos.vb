@@ -169,15 +169,41 @@
             cn.Open()
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@NombreProducto", PublicNombreProducto)
-            cmd.Parameters.AddWithValue("@IdCategoria", PublicIdCategoria)
-            cmd.Parameters.AddWithValue("@CantidadProducto", PublicCantidadProducto)
-            cmd.Parameters.AddWithValue("@ValorProducto", PublicValorProducto)
-            cmd.Parameters.AddWithValue("@FechaRegistroProd", PublicFechaRegistroProducto)
-            cmd.Parameters.AddWithValue("@CodigoCliente", PublicCodigoCliente)
-            cmd.Parameters.AddWithValue("@CodigoEmpleado", PublicCodigoEmpleado)
-            cmd.Parameters.AddWithValue("@Proveedor", PublicProveedor)
-            cmd.Connection = cn
-            cmd.ExecuteNonQuery()
+
+            If PublicCategoria = "Bebidas Frias" Then
+
+                cmd.Parameters.AddWithValue("@IdCategoria", 1)
+                cmd.Parameters.AddWithValue("@CantidadProducto", PublicCantidadProducto)
+                cmd.Parameters.AddWithValue("@ValorProducto", PublicValorProducto)
+                cmd.Parameters.AddWithValue("@FechaRegistroProd", PublicFechaRegistroProducto)
+                cmd.Parameters.AddWithValue("@CodigoCliente", PublicCodigoCliente)
+                cmd.Parameters.AddWithValue("@CodigoEmpleado", PublicCodigoEmpleado)
+                cmd.Parameters.AddWithValue("@Proveedor", PublicProveedor)
+                cmd.Connection = cn
+                cmd.ExecuteNonQuery()
+            End If
+            If PublicCategoria = "Bebidas Calientes" Then
+                cmd.Parameters.AddWithValue("@IdCategoria", 2)
+                cmd.Parameters.AddWithValue("@CantidadProducto", PublicCantidadProducto)
+                cmd.Parameters.AddWithValue("@ValorProducto", PublicValorProducto)
+                cmd.Parameters.AddWithValue("@FechaRegistroProd", PublicFechaRegistroProducto)
+                cmd.Parameters.AddWithValue("@CodigoCliente", PublicCodigoCliente)
+                cmd.Parameters.AddWithValue("@CodigoEmpleado", PublicCodigoEmpleado)
+                cmd.Parameters.AddWithValue("@Proveedor", PublicProveedor)
+                cmd.Connection = cn
+                cmd.ExecuteNonQuery()
+            End If
+            If PublicCategoria = "Paquetes" Then
+                cmd.Parameters.AddWithValue("@IdCategoria", 3)
+                cmd.Parameters.AddWithValue("@CantidadProducto", PublicCantidadProducto)
+                cmd.Parameters.AddWithValue("@ValorProducto", PublicValorProducto)
+                cmd.Parameters.AddWithValue("@FechaRegistroProd", PublicFechaRegistroProducto)
+                cmd.Parameters.AddWithValue("@CodigoCliente", PublicCodigoCliente)
+                cmd.Parameters.AddWithValue("@CodigoEmpleado", PublicCodigoEmpleado)
+                cmd.Parameters.AddWithValue("@Proveedor", PublicProveedor)
+                cmd.Connection = cn
+                cmd.ExecuteNonQuery()
+            End If
         Catch ex As Exception
             Throw ex
         Finally
@@ -193,7 +219,7 @@
         Dim RecibeData As SqlClient.SqlDataAdapter
         Try
             cx.Open()
-            Dim cmd As New SqlClient.SqlCommand("SpDdlProductos", cx)
+            Dim cmd As New SqlClient.SqlCommand("SpConsultaJoinCategoriaCafeteriaProductos", cx)
             RecibeData = New SqlClient.SqlDataAdapter(cmd)
             RecibeData.Fill(datos)
             cmd.ExecuteReader()
@@ -206,4 +232,7 @@
             End If
         End Try
     End Function
+
+
+
 End Class

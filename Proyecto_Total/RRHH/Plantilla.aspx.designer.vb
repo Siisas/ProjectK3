@@ -122,6 +122,24 @@ Partial Public Class Plantilla
     Protected WithEvents TxtProveedor As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control Drl_NombreProducto.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Drl_NombreProducto As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
+    '''Control TxtBuscarFecha.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TxtBuscarFecha As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Control Drl_CategoriaBuscar.
     '''</summary>
     '''<remarks>
@@ -131,13 +149,13 @@ Partial Public Class Plantilla
     Protected WithEvents Drl_CategoriaBuscar As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control btn_Button1.
+    '''Control btn_Consultar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_Consultar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control Gtg_Productos.

@@ -37,21 +37,22 @@
                         <div class="Form">
                             <div class="Cell-Form">
                                 <%--En este div se encierran las filas de esta columna--%>
-                                <asp:RegularExpressionValidator ControlToValidate="TxtProducto" Display="Static" ValidationExpression="^[a-zA-Z'.\s]{1,40}$" runat="server" >Incorrecto!</asp:RegularExpressionValidator>
-                               
+                                <asp:RegularExpressionValidator ControlToValidate="TxtProducto" Display="Dynamic" ValidationExpression="^[a-zA-Z'.\s]{1,40}$" runat="server">Incorrecto!</asp:RegularExpressionValidator>
+
                                 <div class="input-group">
-                                    <div class="input-group-addon"> <asp:RequiredFieldValidator ControlToValidate="TxtProducto" ValidationGroup="Registro" runat="server">*</asp:RequiredFieldValidator>Nombre Producto</div>
+                                    <div class="input-group-addon">
+                                        <asp:RequiredFieldValidator ControlToValidate="TxtProducto" ValidationGroup="Registro" runat="server">*</asp:RequiredFieldValidator>Nombre Producto</div>
                                     <asp:TextBox ID="TxtProducto" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
-                                <asp:RegularExpressionValidator ControlToValidate="TxtValorProducto" ValidationGroup="Registro" Display="Dynamic" ValidationExpression="^[0-9]{1,20}$" runat="server" >Solo debe contener numeros</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ControlToValidate="TxtValorProducto" ValidationGroup="Registro" Display="Dynamic" ValidationExpression="^[0-9]{1,20}$" runat="server">Solo debe contener numeros</asp:RegularExpressionValidator>
                                 <div class="input-group">
                                     <div class="input-group-addon">Valor del Producto</div>
-                               <asp:TextBox ID="TxtValorProducto" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TxtValorProducto" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon">Categoría</div>
                                     <asp:DropDownList ID="Drl_Categoria" CssClass="form-control" runat="server">
-                                         <asp:ListItem Value="0">- Seleccione -</asp:ListItem>
+                                        <asp:ListItem Value="0">- Seleccione -</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
                                 <div class="input-group">
@@ -68,13 +69,13 @@
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon">Fecha de Ingreso</div>
-                                    <asp:TextBox ID="TxtFecha" CssClass="form-control Fecha" MaxLength="10" Placeholder="DD/MM/YYYY" runat="server"></asp:TextBox>
-                                </div>                                
-                            <div class="input-group">
+                                    <asp:TextBox ID="TxtFecha" CssClass="form-control Fecha" MaxLength="10"  runat="server"></asp:TextBox>
+                                </div>
+                                <div class="input-group">
                                     <div class="input-group-addon">Codigo del Empleado</div>
                                     <asp:TextBox ID="TxtCodEmpleado" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
-                                 <div class="input-group">
+                                <div class="input-group">
                                     <div class="input-group-addon">Proveedor del Producto</div>
                                     <asp:TextBox ID="TxtProveedor" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
@@ -85,18 +86,27 @@
                         <div class="text-center Subtitulos">Consulta de Productos</div>
                         <div class="Form">
                             <div class="Cell-Form">
+                                <div class="input-group">
+                                    <div class="input-group-addon">Nombre del Producto</div>
+                                    <asp:DropDownList ID="Drl_NombreProducto" CssClass="form-control" runat="server"></asp:DropDownList>
                                 </div>
-                                <div class="Space-Form"></div>
-                                <div class="Cell-Form">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">Categoria</div>
-                                        <asp:DropDownList ID="Drl_CategoriaBuscar" CssClass="form-control" runat="server"></asp:DropDownList>
-                                    </div>
-                                </div>                                               
+                                <div  class="input-group">
+                                    <div class="input-group-addon">Fecha de Ingreso</div>
+                                     <asp:TextBox ID="TxtBuscarFecha" CssClass="form-control Fecha" MaxLength="10"  runat="server"></asp:TextBox>
+                                </div>
+                                </div>                          
+                            <div class="Space-Form"></div>
+                            <div class="Cell-Form">
+                                <div class="input-group">
+                                    <div class="input-group-addon">Categoria</div>
+                                    <asp:DropDownList ID="Drl_CategoriaBuscar" CssClass="form-control" runat="server"></asp:DropDownList>
+                                </div>
+                            </div>
                         </div>
-                        <asp:Button ID="btn_Button1"  CssClass="btn btn-primary" runat="server" Text="Consultar" />          
+                        <asp:Button ID="btn_Consultar"  CssClass="btn btn-primary" runat="server" Text="Consultar" />
+                        </div>                                  
                     </section>
-                    <asp:GridView class="Grid_Js" ID="Gtg_Productos" runat="server"></asp:GridView>
+                    <asp:GridView    ID="Gtg_Productos" runat="server"></asp:GridView>
                 </ContentTemplate>
             </asp:UpdatePanel>
         </article>
