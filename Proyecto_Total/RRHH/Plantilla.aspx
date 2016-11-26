@@ -37,7 +37,7 @@
                         <div class="Form">
                             <div class="Cell-Form">
                                 <%--En este div se encierran las filas de esta columna--%>
-                                <asp:RegularExpressionValidator ControlToValidate="TxtProducto" ValidationExpression="^[a-zA-Z'.\s]{1,40}$" runat="server" >Incorrecto!</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ControlToValidate="TxtProducto" Display="Static" ValidationExpression="^[a-zA-Z'.\s]{1,40}$" runat="server" >Incorrecto!</asp:RegularExpressionValidator>
                                
                                 <div class="input-group">
                                     <div class="input-group-addon"> <asp:RequiredFieldValidator ControlToValidate="TxtProducto" ValidationGroup="Registro" runat="server">*</asp:RequiredFieldValidator>Nombre Producto</div>

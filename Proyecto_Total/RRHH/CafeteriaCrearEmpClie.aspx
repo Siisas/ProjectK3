@@ -38,14 +38,15 @@
                         <div class="text-center Subtitulos">Crear Empleado</div>
                         <div class="Form">
                             <div class="Cell-Form">
-                                <div class="input-group">
-                                    <div class="input-group-addon">Nombres del Empleado</div>
+                                <asp:RegularExpressionValidator Display="Dynamic" ValidationGroup="Nombre" ControlToValidate="TxtNombreEmpleado" ValidationExpression="^[a-zA-Z'.\s]{1,40}$" runat="server">Por favor ingrese solo letras</asp:RegularExpressionValidator>
+                                   <div class="input-group">
+                                    <div class="input-group-addon"> <asp:RequiredFieldValidator ControlToValidate="TxtNombreEmpleado" ValidationGroup="Nombre" runat="server"  >*</asp:RequiredFieldValidator> Nombres del Empleado</div>
                                     <asp:TextBox ID="TxtNombreEmpleado" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="Space-Form"></div>
                         </div>
-                        <asp:Button ID="btn_AgregarEmpleado" CssClass="btn btn-primary" runat="server" Text="Guardar" />
+                        <asp:Button ID="btn_AgregarEmpleado" ValidationGroup="Nombre" CssClass="btn btn-primary" runat="server" Text="Guardar"/>
                     </section>
                     <section>
                         <%--Aqui hago una columna --%>
@@ -53,14 +54,15 @@
                         <div class="text-center Subtitulos">Crear Cliente</div>
                         <div class="Form">
                             <div class="Cell-Form">
+                                <asp:RegularExpressionValidator Display="Dynamic" ValidationGroup="Empleado" ControlToValidate="TxtNombreCliente" ValidationExpression="^[a-zA-Z'.\s]{1,30}$"  runat="server" >Por favor digite solo caracteres</asp:RegularExpressionValidator>
                                 <div class="input-group">
-                                    <div class="input-group-addon">Nombres del Cliente</div>
+                                    <div class="input-group-addon"> <asp:RequiredFieldValidator ControlToValidate="TxtNombreCliente" ValidationGroup="Empleado" runat="server" Display="Dynamic" >*</asp:RequiredFieldValidator> Nombres del Cliente</div>
                                     <asp:TextBox ID="TxtNombreCliente" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="Space-Form"></div>
                         </div>
-                        <asp:Button ID="btn_AgregarCliente" CssClass="btn btn-primary" runat="server" Text="Guardar" />
+                        <asp:Button ID="btn_AgregarCliente" ValidationGroup="Empleado" CssClass="btn btn-primary" runat="server" Text="Guardar" />
                     </section>
                      <asp:Panel runat="server" ID="Panel1">
                 <asp:Label ID="Mensaje" runat="server"></asp:Label>
