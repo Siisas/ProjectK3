@@ -58843,6 +58843,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:digitacion.CafeteriaComprarProducto._Drl_NombreEmpleado">
+<summary>
+Control Drl_NombreEmpleado.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:digitacion.CafeteriaComprarProducto._TxtValor">
 <summary>
 Control TxtValor.
@@ -58855,6 +58864,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:digitacion.CafeteriaComprarProducto._TxtCantidadProducto">
 <summary>
 Control TxtCantidadProducto.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:digitacion.CafeteriaComprarProducto._Drl_NombreCliente">
+<summary>
+Control Drl_NombreCliente.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -58933,6 +58951,15 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
+<member name="F:digitacion.CafeteriaCrearEmpClie._TxtNumeroCedulaEmp">
+<summary>
+Control TxtNumeroCedulaEmp.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
 <member name="F:digitacion.CafeteriaCrearEmpClie._btn_AgregarEmpleado">
 <summary>
 Control btn_AgregarEmpleado.
@@ -58945,6 +58972,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:digitacion.CafeteriaCrearEmpClie._TxtNombreCliente">
 <summary>
 Control TxtNombreCliente.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:digitacion.CafeteriaCrearEmpClie._TxtNumeroCedulaCli">
+<summary>
+Control TxtNumeroCedulaCli.
 </summary>
 <remarks>
 Campo generado automáticamente.

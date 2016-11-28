@@ -59,6 +59,15 @@ Partial Public Class CafeteriaComprarProducto
     Protected WithEvents Drl_Categoria As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+    '''Control Drl_NombreEmpleado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Drl_NombreEmpleado As Global.System.Web.UI.WebControls.DropDownList
+    
+    '''<summary>
     '''Control TxtValor.
     '''</summary>
     '''<remarks>
@@ -75,6 +84,15 @@ Partial Public Class CafeteriaComprarProducto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents TxtCantidadProducto As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control Drl_NombreCliente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Drl_NombreCliente As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''Control btn_Agregar.

@@ -45,6 +45,13 @@
                                 </div>
                             </div>
                             <div class="Space-Form"></div>
+                            <div class="Cell-Form">
+                                <asp:RegularExpressionValidator Display="Dynamic" ValidationGroup="Nombre" ControlToValidate="TxtNumeroCedulaEmp" ValidationExpression="^[0-9]{1,40}$" runat="server">Por favor ingrese solo Numeros</asp:RegularExpressionValidator>
+                                   <div class="input-group">
+                                    <div class="input-group-addon"> <asp:RequiredFieldValidator ControlToValidate="TxtNumeroCedulaEmp" ValidationGroup="Nombre" runat="server"  >*</asp:RequiredFieldValidator> Numero cedula del Empleado</div>
+                                    <asp:TextBox ID="TxtNumeroCedulaEmp" CssClass="form-control" runat="server"></asp:TextBox>
+                                </div>
+                            </div>                            
                         </div>
                         <asp:Button ID="btn_AgregarEmpleado" ValidationGroup="Nombre" CssClass="btn btn-primary" runat="server" Text="Guardar"/>
                     </section>
@@ -60,7 +67,14 @@
                                     <asp:TextBox ID="TxtNombreCliente" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="Space-Form"></div>
+              <div class="Space-Form"></div>
+                            <div class="Cell-Form">
+                                <asp:RegularExpressionValidator Display="Dynamic" ValidationGroup="Empleado" ControlToValidate="TxtNumeroCedulaCli" ValidationExpression="^[0-9]{1,40}$" runat="server">Por favor ingrese solo Numeros</asp:RegularExpressionValidator>
+                                   <div class="input-group">
+                                    <div class="input-group-addon"> <asp:RequiredFieldValidator ControlToValidate="TxtNumeroCedulaCli" ValidationGroup="Empleado" runat="server"  >*</asp:RequiredFieldValidator> Numero Cedula del Empleado</div>
+                                    <asp:TextBox ID="TxtNumeroCedulaCli" CssClass="form-control" runat="server"></asp:TextBox>
+                                </div>
+                            </div>                            
                         </div>
                         <asp:Button ID="btn_AgregarCliente" ValidationGroup="Empleado" CssClass="btn btn-primary" runat="server" Text="Guardar" />
                     </section>

@@ -45,6 +45,10 @@
                                     <div class="input-group-addon">Categoría</div>
                                     <asp:DropDownList ID="Drl_Categoria" CssClass="form-control" runat="server"></asp:DropDownList>
                                 </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">Nombre del Empleado</div>
+                                    <asp:DropDownList ID="Drl_NombreEmpleado" CssClass="form-control" runat="server"></asp:DropDownList>
+                                </div>
                             </div>
                             <div class="Space-Form"></div>
 
@@ -55,23 +59,27 @@
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon">Cantidad</div>
-                                      <asp:TextBox ID="TxtCantidadProducto" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TxtCantidadProducto" CssClass="form-control" runat="server"></asp:TextBox>
                                 </div>
-                            </div>                                       
+                                <div class="input-group">
+                                    <div class="input-group-addon">Nombre del Cliente</div>
+                                    <asp:DropDownList ID="Drl_NombreCliente" CssClass="form-control" runat="server"></asp:DropDownList>
+                                </div>
+                            </div>
                         </div>
-                        <asp:Button ID="btn_Agregar"  CssClass="btn btn-primary" runat="server" Text="Agregar" />     
-                        <asp:Button ID="btn_Comprar"  CssClass="btn btn-primary" runat="server" Text="Comprar" />          
-                         </section>
+                        <asp:Button ID="btn_Agregar" CssClass="btn btn-primary" runat="server" Text="Agregar" />
+                        <asp:Button ID="btn_Comprar" CssClass="btn btn-primary" runat="server" Text="Comprar" />
+                    </section>
                     <section>
                         <div class="text-center Subtitulos">Total a pagar</div>
                         <div class="Cell-Form">
                             <div class="input-group">
                                 <div class="input-group-addon">Total a pagar</div>
-                                 <asp:TextBox ID="TxtValorTotal" CssClass="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TxtValorTotal" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
 
                         </div>
-                              <asp:GridView class="Grid_Js" ID="Gtg_TotalCompras" runat="server"></asp:GridView>
+                        <asp:GridView class="Grid_Js" ID="Gtg_TotalCompras" runat="server"></asp:GridView>
                     </section>
                 </ContentTemplate>
             </asp:UpdatePanel>

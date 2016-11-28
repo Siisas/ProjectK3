@@ -11,9 +11,8 @@
     Protected nombreCliente As String
     Protected nombreEmpleado As String
     Protected proveedor As String
-
-
-
+    Protected NumeroCedulaEmpleado As Integer
+    Protected NumeroCedulaCliente As Integer
     Public Property PublicidProducto As Integer
         Get
             Return idProducto
@@ -121,19 +120,35 @@
         End Set
     End Property
 
+    Public Property PublicicNumeroCedulaEmpleado As Integer
+        Get
+            Return NumeroCedulaEmpleado
+        End Get
+        Set(value As Integer)
+            NumeroCedulaEmpleado = value
+        End Set
+    End Property
+    Public Property PublicicNumeroCedulaCliente As Integer
+        Get
+            Return NumeroCedulaCliente
+        End Get
+        Set(value As Integer)
+            NumeroCedulaCliente = value
+        End Set
+    End Property
+
     'empiezo a hacer conexion con la base de datos para insertar datos 
     'utilizo stored procedured y una propiedad como parametro que recibe
     Public Sub RegEmpleadosCafeteria()
-
         Dim cn As New SqlClient.SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("conexion2").ConnectionString) ' Conexion con la base 
         Try
             Dim cms As New SqlClient.SqlCommand("SpRegistrarEmpleado", cn)
             cn.Open()
             cms.CommandType = CommandType.StoredProcedure
             cms.Parameters.AddWithValue("@NombreEmpleado", nombreEmpleado)
+            cms.Parameters.AddWithValue("@NumeroCedula", NumeroCedulaEmpleado)
             cms.Connection = cn
             cms.ExecuteNonQuery()
-
         Catch ex As Exception
             Throw ex
         Finally
@@ -144,13 +159,13 @@
     End Sub
 
     Public Sub RegClienteCafeteria()
-
         Dim cn As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("conexion2").ConnectionString)
         Try
             Dim cms As New SqlClient.SqlCommand("SpRegistarCliente", cn)
             cn.Open()
             cms.CommandType = CommandType.StoredProcedure
             cms.Parameters.AddWithValue("@NombreCliente", nombreCliente)
+            cms.Parameters.AddWithValue("@NumeroCedula", NumeroCedulaCliente)
             cms.Connection = cn
             cms.ExecuteNonQuery()
         Catch ex As Exception
@@ -169,9 +184,7 @@
             cn.Open()
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@NombreProducto", PublicNombreProducto)
-
             If PublicCategoria = "Bebidas Frias" Then
-
                 cmd.Parameters.AddWithValue("@IdCategoria", 1)
                 cmd.Parameters.AddWithValue("@CantidadProducto", PublicCantidadProducto)
                 cmd.Parameters.AddWithValue("@ValorProducto", PublicValorProducto)
@@ -233,6 +246,24 @@
         End Try
     End Function
 
-
-
+    Public Function CargarDatosDDlComprarProductos()
+        Dim cn As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("conexion2").ConnectionString)
+        Dim datos As New DataSet
+        Dim RecibeDatos As SqlClient.SqlDataAdapter
+        Try
+            cn.Open()
+            Dim cmd As New SqlClient.SqlCommand("SpLLenarDDLVEntaProductos", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
+            RecibeDatos.Fill(datos)
+            cmd.ExecuteReader()
+            Return datos
+        Catch ex As Exception
+            Throw ex
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+    End Function
 End Class

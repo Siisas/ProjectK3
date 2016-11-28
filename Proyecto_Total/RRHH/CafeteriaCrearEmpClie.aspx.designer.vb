@@ -50,6 +50,15 @@ Partial Public Class CafeteriaCrearEmpClie
     Protected WithEvents TxtNombreEmpleado As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Control TxtNumeroCedulaEmp.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TxtNumeroCedulaEmp As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Control btn_AgregarEmpleado.
     '''</summary>
     '''<remarks>
@@ -66,6 +75,15 @@ Partial Public Class CafeteriaCrearEmpClie
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents TxtNombreCliente As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Control TxtNumeroCedulaCli.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TxtNumeroCedulaCli As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control btn_AgregarCliente.

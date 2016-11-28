@@ -1,6 +1,5 @@
 ﻿Public Class CafeteriaCrearEmpClie
     Inherits System.Web.UI.Page
-
     Dim ObjProductosCafeteria As New clsCafeteriaProductos
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
@@ -23,11 +22,12 @@
             If TxtNombreEmpleado.Text = Nothing Then
                 Mensaje.Text = ("Por favor registre un nombre")
             Else
-
                 ObjProductosCafeteria.PublicNombreEmpleado = TxtNombreEmpleado.Text
+                ObjProductosCafeteria.PublicicNumeroCedulaEmpleado = TxtNumeroCedulaEmp.Text
                 ObjProductosCafeteria.RegEmpleadosCafeteria()
                 Mensaje.Text = "El Empleado se Registro con Exito"
                 TxtNombreEmpleado.Text = ""
+                TxtNumeroCedulaEmp.Text = ""
             End If
         Catch ex As Exception
             Mensaje.Text = "Se genero un error" + ex.Message
@@ -45,10 +45,11 @@
                 Mensaje.Text = ("Por favor registre un nombre")
             Else
                 ObjProductosCafeteria.PublicNombreCliente = TxtNombreCliente.Text
+                ObjProductosCafeteria.PublicicNumeroCedulaCliente = TxtNumeroCedulaCli.Text
                 ObjProductosCafeteria.RegClienteCafeteria()
-
                 Mensaje.Text = "Se Registro el cliente con exito"
                 TxtNombreCliente.Text = ""
+                TxtNumeroCedulaCli.Text = ""
             End If
         Catch ex As Exception
             Mensaje.Text = "Se genero un error " + ex.Message
