@@ -50,15 +50,6 @@ Partial Public Class Plantilla
     Protected WithEvents TxtProducto As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control TxtValorProducto.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents TxtValorProducto As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''Control Drl_Categoria.
     '''</summary>
     '''<remarks>
@@ -66,15 +57,6 @@ Partial Public Class Plantilla
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents Drl_Categoria As Global.System.Web.UI.WebControls.DropDownList
-    
-    '''<summary>
-    '''Control TxtCodCliente.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents TxtCodCliente As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''Control Btn_RegistrarProducto.
@@ -86,15 +68,6 @@ Partial Public Class Plantilla
     Protected WithEvents Btn_RegistrarProducto As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''Control TxtCantidad.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents TxtCantidad As Global.System.Web.UI.WebControls.TextBox
-    
-    '''<summary>
     '''Control TxtFecha.
     '''</summary>
     '''<remarks>
@@ -104,13 +77,13 @@ Partial Public Class Plantilla
     Protected WithEvents TxtFecha As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
-    '''Control TxtCodEmpleado.
+    '''Control Drl_CodigoEmpleado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TxtCodEmpleado As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Drl_CodigoEmpleado As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
     '''Control TxtProveedor.

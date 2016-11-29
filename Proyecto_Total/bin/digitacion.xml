@@ -63469,27 +63469,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:digitacion.Plantilla._TxtValorProducto">
-<summary>
-Control TxtValorProducto.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:digitacion.Plantilla._Drl_Categoria">
 <summary>
 Control Drl_Categoria.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
-<member name="F:digitacion.Plantilla._TxtCodCliente">
-<summary>
-Control TxtCodCliente.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -63505,15 +63487,6 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:digitacion.Plantilla._TxtCantidad">
-<summary>
-Control TxtCantidad.
-</summary>
-<remarks>
-Campo generado automáticamente.
-Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-</remarks>
-</member>
 <member name="F:digitacion.Plantilla._TxtFecha">
 <summary>
 Control TxtFecha.
@@ -63523,9 +63496,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:digitacion.Plantilla._TxtCodEmpleado">
+<member name="F:digitacion.Plantilla._Drl_CodigoEmpleado">
 <summary>
-Control TxtCodEmpleado.
+Control Drl_CodigoEmpleado.
 </summary>
 <remarks>
 Campo generado automáticamente.

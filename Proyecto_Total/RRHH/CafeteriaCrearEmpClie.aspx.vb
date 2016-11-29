@@ -23,7 +23,7 @@
                 Mensaje.Text = ("Por favor registre un nombre")
             Else
                 ObjProductosCafeteria.PublicNombreEmpleado = TxtNombreEmpleado.Text
-                ObjProductosCafeteria.PublicicNumeroCedulaEmpleado = TxtNumeroCedulaEmp.Text
+                ObjProductosCafeteria.PublicCedulaEmpleado = TxtNumeroCedulaEmp.Text
                 ObjProductosCafeteria.RegEmpleadosCafeteria()
                 Mensaje.Text = "El Empleado se Registro con Exito"
                 TxtNombreEmpleado.Text = ""
@@ -45,7 +45,7 @@
                 Mensaje.Text = ("Por favor registre un nombre")
             Else
                 ObjProductosCafeteria.PublicNombreCliente = TxtNombreCliente.Text
-                ObjProductosCafeteria.PublicicNumeroCedulaCliente = TxtNumeroCedulaCli.Text
+                ObjProductosCafeteria.PublicicCedulaCliente = TxtNumeroCedulaCli.Text
                 ObjProductosCafeteria.RegClienteCafeteria()
                 Mensaje.Text = "Se Registro el cliente con exito"
                 TxtNombreCliente.Text = ""

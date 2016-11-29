@@ -12,7 +12,7 @@ Public Class CafeteriaComprarProducto
             Pnl_Message.CssClass = Nothing
             lblmsg.Text = Nothing
             If Not IsPostBack Then
-                Session("Formulario") = "Ingreso Productos"
+                Session("Formulario") = "Compra de Productos"
                 LlenatDDL()
             End If
 
@@ -50,6 +50,16 @@ Public Class CafeteriaComprarProducto
         ObjetoClsCafeteriaProductos.PublicValorProducto = TxtValor.Text
         ObjetoClsCafeteriaProductos.PublicCantidadProducto = TxtCantidadProducto.Text
         ObjetoClsCafeteriaProductos.PublicNombreCliente = Drl_NombreCliente.SelectedValue
+
+        'Session["Carro"] =TxtValor.text
+
+        'Dim firstName As String = "John"
+        'Dim lastName As String = "Smith"
+        'Dim city As String = "Seattle"
+        'Session("FirstName") = firstName
+        'Session("LastName") = lastName
+        'Session("City") = city
+
         'Falta hacer el metodo a donde se va a guardar la compra
         'ObjetoClsCafeteriaProductos. 
     End Sub

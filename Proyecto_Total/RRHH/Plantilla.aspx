@@ -43,37 +43,28 @@
                                     <div class="input-group-addon">
                                         <asp:RequiredFieldValidator ControlToValidate="TxtProducto" ValidationGroup="Registro" runat="server">*</asp:RequiredFieldValidator>Nombre Producto</div>
                                     <asp:TextBox ID="TxtProducto" CssClass="form-control" runat="server"></asp:TextBox>
-                                </div>
-                                <asp:RegularExpressionValidator ControlToValidate="TxtValorProducto" ValidationGroup="Registro" Display="Dynamic" ValidationExpression="^[0-9]{1,20}$" runat="server">Solo debe contener numeros</asp:RegularExpressionValidator>
-                                <div class="input-group">
-                                    <div class="input-group-addon">Valor del Producto</div>
-                                    <asp:TextBox ID="TxtValorProducto" CssClass="form-control" runat="server"></asp:TextBox>
-                                </div>
+                                </div>                              
                                 <div class="input-group">
                                     <div class="input-group-addon">Categoría</div>
                                     <asp:DropDownList ID="Drl_Categoria" CssClass="form-control" runat="server">
                                         <asp:ListItem Value="0">- Seleccione -</asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
-                                <div class="input-group">
-                                    <div class="input-group-addon">Codigo del Cliente</div>
-                                    <asp:TextBox ID="TxtCodCliente" CssClass="form-control" runat="server"></asp:TextBox>
-                                </div>
+                                
                                 <asp:Button ID="Btn_RegistrarProducto" ValidationGroup="Registro" CssClass="btn btn-primary" runat="server" Text="Registrar" />
                             </div>
                             <div class="Space-Form"></div>
                             <div class="Cell-Form">
-                                <div class="input-group">
-                                    <div class="input-group-addon">Cantidad</div>
-                                    <asp:TextBox ID="TxtCantidad" CssClass="form-control" runat="server"></asp:TextBox>
-                                </div>
+                               
                                 <div class="input-group">
                                     <div class="input-group-addon">Fecha de Ingreso</div>
                                     <asp:TextBox ID="TxtFecha" CssClass="form-control Fecha" MaxLength="10"  runat="server"></asp:TextBox>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon">Codigo del Empleado</div>
-                                    <asp:TextBox ID="TxtCodEmpleado" CssClass="form-control" runat="server"></asp:TextBox>
+                                           <asp:DropDownList ID="Drl_CodigoEmpleado" CssClass="form-control" runat="server">
+                                                <asp:ListItem Value="0">- Seleccione -</asp:ListItem>
+                                               </asp:DropDownList>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon">Proveedor del Producto</div>
