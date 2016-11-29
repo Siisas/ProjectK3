@@ -266,4 +266,70 @@
             End If
         End Try
     End Function
+
+    Public Function CargarDatosDDlComprarCategoria()
+        Dim cn As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("conexion2").ConnectionString)
+        Dim datos As New DataSet
+        Dim RecibeDatos As SqlClient.SqlDataAdapter
+        Try
+            cn.Open()
+            Dim cmd As New SqlClient.SqlCommand("SpLLenarDDlVentasCategoria", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
+            RecibeDatos.Fill(datos)
+            cmd.ExecuteReader()
+            Return datos
+        Catch ex As Exception
+            Throw ex
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+
+    End Function
+
+    Public Function CargarDatosDDlComprarNombreEmpleado()
+        Dim cn As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("conexion2").ConnectionString)
+        Dim datos As New DataSet
+        Dim RecibeDatos As SqlClient.SqlDataAdapter
+        Try
+            cn.Open()
+            Dim cmd As New SqlClient.SqlCommand("SpLLenarDDlNombreEmpleado", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
+            RecibeDatos.Fill(datos)
+            cmd.ExecuteReader()
+            Return datos
+        Catch ex As Exception
+            Throw ex
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+
+    End Function
+    Public Function CargarDatosDDlComprarNombreCliente()
+        Dim cn As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("conexion2").ConnectionString)
+        Dim datos As New DataSet
+        Dim RecibeDatos As SqlClient.SqlDataAdapter
+        Try
+            cn.Open()
+            Dim cmd As New SqlClient.SqlCommand("SpLLenarDDlNombreCliente", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
+            RecibeDatos.Fill(datos)
+            cmd.ExecuteReader()
+            Return datos
+        Catch ex As Exception
+            Throw ex
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+
+    End Function
+
 End Class

@@ -27,19 +27,19 @@ Public Class CafeteriaComprarProducto
         Drl_Productos.DataValueField = "IdProducto"
         Drl_Productos.DataBind()
         Drl_Productos.Items.Insert(0, "- Seleccione -")
-        Drl_Categoria.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarProductos()
+        Drl_Categoria.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarCategoria()
         Drl_Categoria.DataTextField = "Categoria"
-        Drl_Categoria.DataValueField = "Categoria"
+        Drl_Categoria.DataValueField = "IdCategoria"
         Drl_Categoria.DataBind()
-        Drl_Categoria.Items.Insert(0, "- Selecciones -")
-        Drl_NombreEmpleado.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarProductos()
+        Drl_Categoria.Items.Insert(0, "- Seleccione -")
+        Drl_NombreEmpleado.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarNombreEmpleado()
         Drl_NombreEmpleado.DataTextField = "NombreEmpleado"
-        Drl_NombreEmpleado.DataValueField = "NombreEmpleado"
+        Drl_NombreEmpleado.DataValueField = "CodigoEmpleado"
         Drl_NombreEmpleado.DataBind()
         Drl_NombreEmpleado.Items.Insert(0, "- Seleccione -")
-        Drl_NombreCliente.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarProductos()
+        Drl_NombreCliente.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarNombreCliente()
         Drl_NombreCliente.DataTextField = "NombreCliente"
-        Drl_NombreCliente.DataValueField = "NombreCliente"
+        Drl_NombreCliente.DataValueField = "CodigoCliente"
         Drl_NombreCliente.DataBind()
         Drl_NombreCliente.Items.Insert(0, "- Seleccione -")
     End Sub
@@ -50,6 +50,8 @@ Public Class CafeteriaComprarProducto
         ObjetoClsCafeteriaProductos.PublicValorProducto = TxtValor.Text
         ObjetoClsCafeteriaProductos.PublicCantidadProducto = TxtCantidadProducto.Text
         ObjetoClsCafeteriaProductos.PublicNombreCliente = Drl_NombreCliente.SelectedValue
+        'Falta hacer el metodo a donde se va a guardar la compra
+        'ObjetoClsCafeteriaProductos. 
     End Sub
 
 End Class
