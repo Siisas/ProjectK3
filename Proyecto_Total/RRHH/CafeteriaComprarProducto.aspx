@@ -67,8 +67,8 @@
                                 </div>
                             </div>
                         </div>
-                        <asp:Button ID="btn_Agregar" CssClass="btn btn-primary" runat="server" Text="Agregar" />
                         <asp:Button ID="btn_Comprar" CssClass="btn btn-primary" runat="server" Text="Comprar" />
+                        <asp:Button ID="btn_Agregar" CssClass="btn btn-primary" runat="server" Text="Agregar" />
                     </section>
                     <section>
                         <div class="text-center Subtitulos">Total a pagar</div>
@@ -77,9 +77,23 @@
                                 <div class="input-group-addon">Total a pagar</div>
                                 <asp:TextBox ID="TxtValorTotal" CssClass="form-control" runat="server"></asp:TextBox>
                             </div>
-
+                            <div class="bordes" style="overflow: auto; min-height: 0px; max-height: 1000px; width: 100%;">
+                                <asp:GridView ID="Gtg_TotalCompras" runat="server" CellPadding="4" ForeColor="#333333"
+                                    GridLines="None" Width="100%" Style="font-size: x-small"
+                                    EnableModelValidation="True">
+                                    <RowStyle BackColor="#EEF1D8" ForeColor="#333333" />
+                                    <FooterStyle BackColor="#B3C556" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="#B3C556" ForeColor="White" HorizontalAlign="Center" />
+                                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                    <HeaderStyle BackColor="#B3C556" Font-Bold="False" ForeColor="White" Font-Size="Small" />
+                                    <Columns>
+                                        <asp:ButtonField CommandName="Delete" Text="Botón" />
+                                    </Columns>
+                                    <EditRowStyle BackColor="#999999" />
+                                    <AlternatingRowStyle BackColor="White" ForeColor="#333333" />
+                                </asp:GridView>
+                            </div>
                         </div>
-                        <asp:GridView class="Grid_Js" ID="Gtg_TotalCompras" runat="server"></asp:GridView>
                     </section>
                 </ContentTemplate>
             </asp:UpdatePanel>

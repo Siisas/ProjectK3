@@ -95,15 +95,6 @@ Partial Public Class CafeteriaComprarProducto
     Protected WithEvents Drl_NombreCliente As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control btn_Agregar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_Agregar As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''Control btn_Comprar.
     '''</summary>
     '''<remarks>
@@ -111,6 +102,15 @@ Partial Public Class CafeteriaComprarProducto
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_Comprar As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Control btn_Agregar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btn_Agregar As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
     '''Control TxtValorTotal.
