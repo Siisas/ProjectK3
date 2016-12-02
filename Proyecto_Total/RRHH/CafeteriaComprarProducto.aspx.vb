@@ -42,11 +42,11 @@ Public Class CafeteriaComprarProducto
         Drl_NombreEmpleado.DataValueField = "CodigoEmpleado"
         Drl_NombreEmpleado.DataBind()
         Drl_NombreEmpleado.Items.Insert(0, "- Seleccione -")
-        Drl_Valor.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlValorProducto
-        Drl_Valor.DataTextField = "ValorProducto"
-        Drl_Valor.DataValueField = "ValorProducto"
-        Drl_Valor.DataBind()
-        Drl_Valor.Items.Insert(0, "- Seleccione -")
+        'Lbl_Valor.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlValorProducto
+        'Drl_Valor.DataTextField = "ValorProducto"
+        'Drl_Valor.DataValueField = "ValorProducto"
+        'Drl_Valor.DataBind()
+        'Drl_Valor.Items.Insert(0, "- Seleccione -")
         Drl_NombreCliente.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarNombreCliente()
         Drl_NombreCliente.DataTextField = "NombreCliente"
         Drl_NombreCliente.DataValueField = "CodigoCliente"
@@ -67,7 +67,7 @@ Public Class CafeteriaComprarProducto
         Dim dt As DataTable
         dt = Session("AcumulaRegistros")
 
-        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedValue), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Drl_Valor.SelectedValue), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue), Convert.ToInt32(TxtValorTotal.Text) = Convert.ToString((Drl_Valor.SelectedItem)) * Convert.ToInt32((TxtCantidadProducto.Text)))
+        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedValue), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Lbl_Valor.Text), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue), Convert.ToInt32(TxtValorTotal.Text) = Convert.ToString((Lbl_Valor.Text)) * Convert.ToInt32((TxtCantidadProducto.Text)))
         dt.AcceptChanges()
         Gtg_TotalCompras.DataSource = dt
         Gtg_TotalCompras.DataBind()
@@ -97,7 +97,7 @@ Public Class CafeteriaComprarProducto
         'Drl_Valor.SelectedValue = ObjetoClsCafeteriaProductos.CargarDatosIndexProducto
 
         ObjetoClsCafeteriaProductos.PublicidProducto = Drl_Productos.SelectedValue
-        Drl_Valor.SelectedValue = ObjetoClsCafeteriaProductos.CargarDatosIndexProducto
+        Lbl_Valor.Text = ObjetoClsCafeteriaProductos.CargarDatosIndexProducto
 
 
     End Sub

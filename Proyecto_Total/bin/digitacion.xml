@@ -58852,9 +58852,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:digitacion.CafeteriaComprarProducto._Drl_Valor">
+<member name="F:digitacion.CafeteriaComprarProducto._Lbl_Valor">
 <summary>
-Control Drl_Valor.
+Control Lbl_Valor.
 </summary>
 <remarks>
 Campo generado automáticamente.
