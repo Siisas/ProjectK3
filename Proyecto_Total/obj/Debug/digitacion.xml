@@ -58852,9 +58852,9 @@ Campo generado automáticamente.
 Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 </remarks>
 </member>
-<member name="F:digitacion.CafeteriaComprarProducto._TxtValor">
+<member name="F:digitacion.CafeteriaComprarProducto._Drl_Valor">
 <summary>
-Control TxtValor.
+Control Drl_Valor.
 </summary>
 <remarks>
 Campo generado automáticamente.
@@ -63472,6 +63472,15 @@ Para modificarlo, mueva la declaración del campo del archivo del diseñador al 
 <member name="F:digitacion.Plantilla._Drl_Categoria">
 <summary>
 Control Drl_Categoria.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:digitacion.Plantilla._TxtValorProducto">
+<summary>
+Control TxtValorProducto.
 </summary>
 <remarks>
 Campo generado automáticamente.

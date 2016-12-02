@@ -25,6 +25,7 @@
     Protected Sub Btn_RegistrarProducto_Click(sender As Object, e As EventArgs) Handles Btn_RegistrarProducto.Click
         ObjProductosCafeteria.PublicNombreProducto = TxtProducto.Text
         ObjProductosCafeteria.PublicIdCategoria = Drl_Categoria.SelectedValue
+        ObjProductosCafeteria.PublicValorProducto = TxtValorProducto.Text
         ObjProductosCafeteria.PublicFechaRegistroProducto = TxtFecha.Text
         ObjProductosCafeteria.PublicCedulaEmpleado = Drl_CodigoEmpleado.SelectedValue
         ObjProductosCafeteria.PublicProveedor = TxtProveedor.Text
@@ -39,7 +40,7 @@
         Drl_Categoria.Items.Insert(0, "- Seleccione -")
         Drl_NombreProducto.DataSource = ObjProductosCafeteria.CargarDatosDDlProductosNmbreP()
         Drl_NombreProducto.DataTextField = "NombreProducto"
-        Drl_NombreProducto.DataValueField = "IdNombreProducto"
+        Drl_NombreProducto.DataValueField = "IdProducto"
         Drl_NombreProducto.DataBind()
         Drl_NombreProducto.Items.Insert(0, "-Seleccione-")
         Drl_CodigoEmpleado.DataSource = ObjProductosCafeteria.CargarDatosDDlComprarNombreEmpleado

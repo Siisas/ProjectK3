@@ -4,6 +4,7 @@ Public Class CafeteriaComprarProducto
     Dim ObjetoClsCafeteriaProductos As New clsCafeteriaProductos
     Dim dt As New DataTable
 
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             If Session("permisos") Is Nothing Then
@@ -15,7 +16,8 @@ Public Class CafeteriaComprarProducto
                 Session("Formulario") = "Compra de Productos"
                 LlenatDDL()
                 Detalle()
-                Session("nose") = dt
+                Session("AcumulaRegistros") = dt
+
             End If
 
         Catch ex As Exception
@@ -24,6 +26,7 @@ Public Class CafeteriaComprarProducto
         End Try
     End Sub
     Public Sub LlenatDDL()
+
         Drl_Productos.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarProductos()
         Drl_Productos.DataTextField = "NombreProducto"
         Drl_Productos.DataValueField = "IdProducto"
@@ -39,6 +42,11 @@ Public Class CafeteriaComprarProducto
         Drl_NombreEmpleado.DataValueField = "CodigoEmpleado"
         Drl_NombreEmpleado.DataBind()
         Drl_NombreEmpleado.Items.Insert(0, "- Seleccione -")
+        Drl_Valor.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlValorProducto
+        Drl_Valor.DataTextField = "ValorProducto"
+        Drl_Valor.DataValueField = "ValorProducto"
+        Drl_Valor.DataBind()
+        Drl_Valor.Items.Insert(0, "- Seleccione -")
         Drl_NombreCliente.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarNombreCliente()
         Drl_NombreCliente.DataTextField = "NombreCliente"
         Drl_NombreCliente.DataValueField = "CodigoCliente"
@@ -46,25 +54,24 @@ Public Class CafeteriaComprarProducto
         Drl_NombreCliente.Items.Insert(0, "- Seleccione -")
     End Sub
     Private Sub Detalle()
-        dt.Columns.Add(New DataColumn("Producto", GetType(String)))
+        dt.Columns.Add(New DataColumn("Codigo del Producto", GetType(Integer)))
+        dt.Columns.Add(New DataColumn("Nombre del Producto", GetType(String)))
         dt.Columns.Add(New DataColumn("Categoria", GetType(String)))
-        dt.Columns.Add(New DataColumn("NombreEmpleado", GetType(String)))
+        dt.Columns.Add(New DataColumn("Nombre del Empleado", GetType(String)))
         dt.Columns.Add(New DataColumn("Valor", GetType(Integer)))
         dt.Columns.Add(New DataColumn("Cantidad", GetType(Integer)))
-        dt.Columns.Add(New DataColumn("NombreCLiente", GetType(String)))
+        dt.Columns.Add(New DataColumn("Nombre del Cliente", GetType(String)))
     End Sub
     Protected Sub btn_Agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
 
         Dim dt As DataTable
-        dt = Session("nose")
+        dt = Session("AcumulaRegistros")
 
-
-        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedValue), Convert.ToString(Drl_Categoria.SelectedValue), Convert.ToString(Drl_NombreEmpleado.SelectedValue), Convert.ToString(TxtValor.Text), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue))
+        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedValue), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Drl_Valor.SelectedValue), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue), Convert.ToInt32(TxtValorTotal.Text) = Convert.ToString((Drl_Valor.SelectedItem)) * Convert.ToInt32((TxtCantidadProducto.Text)))
         dt.AcceptChanges()
-        'dt.Rows.Add(Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedItem))
         Gtg_TotalCompras.DataSource = dt
         Gtg_TotalCompras.DataBind()
-        Session("nose") = dt
+        Session("AcumulaRegistros") = dt
 
     End Sub
 
@@ -83,79 +90,19 @@ Public Class CafeteriaComprarProducto
 
     End Sub
 
-    Protected Sub Drl_NombreCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Drl_NombreCliente.SelectedIndexChanged
+    Protected Sub Drl_Productos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Drl_Productos.SelectedIndexChanged
+        'Dim a As Integer = Drl_Productos.SelectedValue
+
+        'ObjetoClsCafeteriaProductos.PublicidProducto = a
+        'Drl_Valor.SelectedValue = ObjetoClsCafeteriaProductos.CargarDatosIndexProducto
+
+        ObjetoClsCafeteriaProductos.PublicidProducto = Drl_Productos.SelectedValue
+        Drl_Valor.SelectedValue = ObjetoClsCafeteriaProductos.CargarDatosIndexProducto
+
 
     End Sub
 
-    'Protected Sub btninsertar_Click(sender As Object, e As EventArgs) Handles btninsertar.Click
+    Private Sub CafeteriaComprarProducto_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
 
-
-    '    Dim detalles As DataTable
-
-
-
-    '    Dim row As DataRow = detalles.NewRow()
-    '    row(1) = grid.Cells(1).Text
-    '    row(2) = grid.Cells(2).Text
-    '    row(3) = grid.Cells(3).Text
-    '    row(4) = grid.Cells(4).Text
-    '    row(5) = grid.Cells(5).Text
-    '    row(6) = grid.Cells(6).Text
-    '    row(7) = grid.Cells(7).Text
-    '    row(8) = grid.Cells(8).Text
-    '    row(9) = grid.Cells(9).Text
-    '    row(10) = grid.Cells(10).Text
-    '    row(11) = grid.Cells(11).Text
-    '    row(12) = grid.Cells(12).Text
-    '    row(13) = grid.Cells(13).Text
-    '    row(14) = grid.Cells(14).Text
-    '    row(15) = grid.Cells(15).Text
-    '    row(16) = grid.Cells(16).Text
-
-    '    detalles.Rows.Add(row)
-
-    '    GridView1.DataSource = detalles
-    '    GridView1.DataBind()
-
-    'End Sub
-
-    'Private Sub Form_Load()
-
-    '    If Not IsPostBack Then
-    '        'aqui lanzas la consulta
-
-    '        da.Fill(dt)
-    '        'dt es el datatable
-
-    '        GridView1.DataSource = dt
-
-    '        GridView1.DataBind()
-
-
-    '        Session("datos") = dt
-    '    End If
-
-    'End Sub
-
-
-
-
-    'Private Sub button1_Click()
-    '    Dim dt As DataTable = TryCast(Session("datos"), DataTable)
-
-    '    Dim row As DataRow = dt.NewRow
-
-    '    row("campo1") = TextBox1.Text
-
-    '    row("campo2") = TextBox2.Text
-
-    '    dt.Rows.Add(row)
-
-    '    GridView1.DataSource = dt
-
-    '    GridView1.DataBind()
-    '    Session("datos") = dt
-
-    '    Dim dt As DataTable = TryCast(Session("datos"), DataTable)
-    'End Sub
+    End Sub
 End Class

@@ -59,6 +59,15 @@ Partial Public Class Plantilla
     Protected WithEvents Drl_Categoria As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+    '''Control TxtValorProducto.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents TxtValorProducto As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Control Btn_RegistrarProducto.
     '''</summary>
     '''<remarks>

@@ -16,9 +16,56 @@
     <link type="text/css" rel="Stylesheet" href="~/Css2/Boot/css/bootstrap.min.css" />
     <link type="text/css" rel="Stylesheet" href="~/Css2/jquery-ui.css" />
     <link type="text/css" rel="Stylesheet" href="~/Css2/Kamilion.css" />
+    <script src="../Css2/jquery.min.js"></script>
+    <script>
+        //$(document).ready(function () {
+        //    dato = $("#Drl_Categoria option:selected").val()
+        //    datos = $("#Drl_Categoria").val()
+
+        //    $("#Drl_Categoria").change(function (e) {
+        //        alert($("#Drl_Categoria").val())
+
+        //        switch ($("#Drl_Categoria").val()) {
+        //            case "1":
+        //                alert(($("#Drl_Categoria").val()))
+        //                $("#Drl_Valor").val(1800) //= //($("#Drl_Categoria").val())
+        //                break;
+        //            case 2:
+        //                $("#Drl_Valor").val(2)
+        //                break;
+        //        }
+        //    });
+        //});
+        //$(document).ready(function () {
+        //    //dato = $("#Drl_Categoria option:selected").val()
+        //    //datos = $("#Drl_Productos").val()
+
+        //    $("#Drl_Productos").change(function (e) {
+              
+
+        //        switch ($("#Drl_Productos").val()) {
+        //            case "1":
+                   
+        //                $("#Drl_Valor").val(($("#Drl_Productos").val()))
+        //                break;
+        //            case "2":
+        //                $("#Drl_Valor").val(($("#Drl_Productos").val()))
+        //                break;
+        //            case "3":
+        //                $("#Drl_Valor").val(($("#Drl_Productos").val()))
+        //                break;
+        //            case "4":
+        //                $("#Drl_Valor").val(($("#Drl_Productos").val()))
+        //                break;
+        //        }
+        //    });
+        //});
+
+    </script>
 
 </head>
 <body>
+
     <form runat="server">
         <asp:ScriptManager runat="server"></asp:ScriptManager>
         <Control:Header ID="Header" runat="server" />
@@ -39,7 +86,7 @@
                             <div class="Cell-Form">
                                 <div class="input-group">
                                     <div class="input-group-addon">Producto</div>
-                                    <asp:DropDownList ID="Drl_Productos" CssClass="form-control" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="Drl_Productos" CssClass="form-control" AutoPostBack="true" runat="server"></asp:DropDownList>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon">Categoría</div>
@@ -55,7 +102,8 @@
                             <div class="Cell-Form">
                                 <div class="input-group">
                                     <div class="input-group-addon">Valor</div>
-                                    <asp:TextBox ID="TxtValor" CssClass="form-control" runat="server"></asp:TextBox>
+                                    <%--<asp:DropDownList ID="Drl_Valor" CssClass="form-control" Enabled="true" runat="server"></asp:DropDownList>--%>
+                                    <asp:label ID="Lbl_Valor" CssClass="form-control" readonly="true" runat="server"></asp:label>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-addon">Cantidad</div>
@@ -87,7 +135,7 @@
                                     <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
                                     <HeaderStyle BackColor="#B3C556" Font-Bold="False" ForeColor="White" Font-Size="Small" />
                                     <Columns>
-                                        <asp:ButtonField CommandName="Delete" Text="Botón" />
+                                        <asp:ButtonField CommandName="Delete" Text="Quitar" />
                                     </Columns>
                                     <EditRowStyle BackColor="#999999" />
                                     <AlternatingRowStyle BackColor="White" ForeColor="#333333" />

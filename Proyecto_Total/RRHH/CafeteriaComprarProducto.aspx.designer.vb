@@ -68,13 +68,13 @@ Partial Public Class CafeteriaComprarProducto
     Protected WithEvents Drl_NombreEmpleado As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
-    '''Control TxtValor.
+    '''Control Lbl_Valor.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents TxtValor As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents Lbl_Valor As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
     '''Control TxtCantidadProducto.

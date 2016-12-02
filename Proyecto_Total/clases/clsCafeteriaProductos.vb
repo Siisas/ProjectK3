@@ -189,6 +189,7 @@
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@NombreProducto", PublicNombreProducto)
             cmd.Parameters.AddWithValue("@IdCategoria", PublicIdCategoria)
+            cmd.Parameters.AddWithValue("@ValorProducto", PublicValorProducto)
             cmd.Parameters.AddWithValue("@FechaIngresoPro", PublicFechaRegistroProducto)
             cmd.Parameters.AddWithValue("@CodigoEmpleado", PublicCedulaEmpleado)
             cmd.Parameters.AddWithValue("@Proveedor", PublicProveedor)
@@ -308,6 +309,51 @@
         End Try
 
     End Function
+    Public Function CargarDatosDDlValorProducto()
+        Dim cn As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("conexion2").ConnectionString)
+        Dim datos As New DataSet
+        Dim RecibeDatos As SqlClient.SqlDataAdapter
+        Try
+            cn.Open()
+            Dim cmd As New SqlClient.SqlCommand("SpDdlProductos", cn) 'ok
+            cmd.CommandType = CommandType.StoredProcedure
+            RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
+            RecibeDatos.Fill(datos)
+            cmd.ExecuteReader()
+            Return datos
+        Catch ex As Exception
+            Throw ex
+        Finally
+            If cn.State = ConnectionState.Open Then
+                cn.Close()
+            End If
+        End Try
+
+    End Function
+
+    Public Function CargarDatosIndexProducto()
+        Dim cn As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("conexion2").ConnectionString)
+        Dim datos As New DataSet
+        Dim RecibeDatos As SqlClient.SqlDataAdapter
+        Try
+            Dim cmd As New SqlClient.SqlCommand
+            cmd.CommandText = "select ValorProducto from RLProductos where IdProducto = @IdProductos"
+            cmd.Parameters.Add("@IdProductos", SqlDbType.BigInt).Value = idProducto
+            RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
+            cmd.Connection = cn
+            RecibeDatos.Fill(datos)
+            If datos.Tables(0).Rows(0).Item("ValorProducto") Is System.DBNull.Value Then
+                valorProducto = " "
+            Else
+                valorProducto = datos.Tables(0).Rows(0).Item("ValorProducto")
+            End If
+            Return valorProducto
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
     Public Function CargarDatosDDlComprarNombreCliente()
         Dim cn As New SqlClient.SqlConnection(ConfigurationManager.ConnectionStrings("conexion2").ConnectionString)
         Dim datos As New DataSet
