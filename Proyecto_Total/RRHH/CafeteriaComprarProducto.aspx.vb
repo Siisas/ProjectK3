@@ -16,6 +16,7 @@ Public Class CafeteriaComprarProducto
                 Session("Formulario") = "Compra de Productos"
                 LlenatDDL()
                 Detalle()
+                'ValorTotalVenta()
                 Session("AcumulaRegistros") = dt
 
             End If
@@ -63,16 +64,24 @@ Public Class CafeteriaComprarProducto
         dt.Columns.Add(New DataColumn("Nombre del Cliente", GetType(String)))
 
     End Sub
-    Protected Sub btn_Agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
 
+    'Private Sub ValorTotalVenta()
+
+    '    TxtValorTotal.Text = TxtCantidadProducto.Text * Lbl_Valor.Text
+    'kkk
+    'End Sub
+    Protected Sub btn_Agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
+        Dim totalSuma As Integer
         Dim dt As DataTable
         dt = Session("AcumulaRegistros")
-
-        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedItem), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Lbl_Valor.Text), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue)) 'Convert.ToInt32(TxtValorTotal.Text) = (Lbl_Valor.Text) * (TxtCantidadProducto.Text) 
+        TxtValorTotal.Text = Session("ValorTotal")
+        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedItem), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Lbl_Valor.Text), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue),) 'Convert.ToInt32(TxtValorTotal.Text) = (Lbl_Valor.Text) * (TxtCantidadProducto.Text) 
         dt.AcceptChanges()
+        totalSuma = totalSuma + TxtCantidadProducto.Text * Lbl_Valor.Text
         Gtg_TotalCompras.DataSource = dt
         Gtg_TotalCompras.DataBind()
         Session("AcumulaRegistros") = dt
+        Session("ValorTotal") = (TxtValorTotal.Text)
 
     End Sub
 
