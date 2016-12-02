@@ -49,25 +49,26 @@ Public Class CafeteriaComprarProducto
         'Drl_Valor.Items.Insert(0, "- Seleccione -")
         Drl_NombreCliente.DataSource = ObjetoClsCafeteriaProductos.CargarDatosDDlComprarNombreCliente()
         Drl_NombreCliente.DataTextField = "NombreCliente"
-        Drl_NombreCliente.DataValueField = "CodigoCliente"
+        Drl_NombreCliente.DataValueField = "NombreCLiente"
         Drl_NombreCliente.DataBind()
         Drl_NombreCliente.Items.Insert(0, "- Seleccione -")
     End Sub
     Private Sub Detalle()
-        dt.Columns.Add(New DataColumn("Codigo del Producto", GetType(Integer)))
+        'dt.Columns.Add(New DataColumn("Codigo del Producto", GetType(Integer)))
         dt.Columns.Add(New DataColumn("Nombre del Producto", GetType(String)))
         dt.Columns.Add(New DataColumn("Categoria", GetType(String)))
         dt.Columns.Add(New DataColumn("Nombre del Empleado", GetType(String)))
         dt.Columns.Add(New DataColumn("Valor", GetType(Integer)))
         dt.Columns.Add(New DataColumn("Cantidad", GetType(Integer)))
         dt.Columns.Add(New DataColumn("Nombre del Cliente", GetType(String)))
+
     End Sub
     Protected Sub btn_Agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
 
         Dim dt As DataTable
         dt = Session("AcumulaRegistros")
 
-        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedValue), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Lbl_Valor.Text), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue), Convert.ToInt32(TxtValorTotal.Text) = Convert.ToString((Lbl_Valor.Text)) * Convert.ToInt32((TxtCantidadProducto.Text)))
+        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedItem), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Lbl_Valor.Text), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue)) 'Convert.ToInt32(TxtValorTotal.Text) = (Lbl_Valor.Text) * (TxtCantidadProducto.Text) 
         dt.AcceptChanges()
         Gtg_TotalCompras.DataSource = dt
         Gtg_TotalCompras.DataBind()
