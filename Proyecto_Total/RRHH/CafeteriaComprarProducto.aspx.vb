@@ -62,26 +62,56 @@ Public Class CafeteriaComprarProducto
         dt.Columns.Add(New DataColumn("Valor", GetType(Integer)))
         dt.Columns.Add(New DataColumn("Cantidad", GetType(Integer)))
         dt.Columns.Add(New DataColumn("Nombre del Cliente", GetType(String)))
+        dt.Columns.Add(New DataColumn("Acumulado venta", GetType(Integer)))
 
     End Sub
 
-    'Private Sub ValorTotalVenta()
 
-    '    TxtValorTotal.Text = TxtCantidadProducto.Text * Lbl_Valor.Text
-    'kkk
-    'End Sub
     Protected Sub btn_Agregar_Click(sender As Object, e As EventArgs) Handles btn_Agregar.Click
         Dim totalSuma As Integer
         Dim dt As DataTable
+
         dt = Session("AcumulaRegistros")
-        TxtValorTotal.Text = Session("ValorTotal")
-        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedItem), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Lbl_Valor.Text), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue),) 'Convert.ToInt32(TxtValorTotal.Text) = (Lbl_Valor.Text) * (TxtCantidadProducto.Text) 
+
+        dt.Rows.Add(Convert.ToString(Drl_Productos.SelectedItem), Convert.ToString(Drl_Categoria.SelectedItem), Convert.ToString(Drl_NombreEmpleado.SelectedItem), Convert.ToString(Lbl_Valor.Text), Convert.ToString(TxtCantidadProducto.Text), Convert.ToString(Drl_NombreCliente.SelectedValue)) 'Convert.ToInt32(TxtValorTotal.Text) = (Lbl_Valor.Text) * (TxtCantidadProducto.Text) 
         dt.AcceptChanges()
-        totalSuma = totalSuma + TxtCantidadProducto.Text * Lbl_Valor.Text
+
         Gtg_TotalCompras.DataSource = dt
         Gtg_TotalCompras.DataBind()
         Session("AcumulaRegistros") = dt
-        Session("ValorTotal") = (TxtValorTotal.Text)
+        For Each Row As DataRow In Session("AcumulaRegistros").Rows
+            Dim valor = Row.Item(4)
+            totalSuma = Convert.ToInt32(Lbl_Valor.Text) * Convert.ToInt32(TxtCantidadProducto.Text)
+            Select Case LabelTotal.Text
+                Case = ""
+                    LabelTotal.Text += Convert.ToInt32(totalSuma).ToString
+                Case > 0
+                    LabelTotal.Text += Convert.ToInt32(totalSuma).ToString
+
+                    'LabelTotal.Text += totalSuma.ToString
+                    'totalSuma += totalSuma
+            End Select
+
+            'For index = 1 To Session("AcumulaRegistros") = dt
+
+
+            '    Select Case LabelTotal.Text
+            '        Case = ""
+            '            LabelTotal.Text = totalSuma + totalSuma
+            '        Case > 0
+            '            LabelTotal.Text = totalSuma
+            '            totalSuma = totalSuma
+            '    End Select
+
+            'Next
+
+            'If valor >= 0 Then
+            '    totalSuma = Convert.ToString(Lbl_Valor.Text) * Convert.ToString(TxtCantidadProducto.Text)
+            '    LabelTotal.Text = totalSuma
+            '    Session("AcumulaRegistros") = Row
+            'End If
+        Next
+
 
     End Sub
 
@@ -97,6 +127,7 @@ Public Class CafeteriaComprarProducto
     End Sub
 
     Protected Sub Gtg_TotalCompras_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Gtg_TotalCompras.SelectedIndexChanged
+
 
     End Sub
 
@@ -115,4 +146,6 @@ Public Class CafeteriaComprarProducto
     Private Sub CafeteriaComprarProducto_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
 
     End Sub
+
+
 End Class

@@ -251,8 +251,9 @@
         Dim RecibeDatos As SqlClient.SqlDataAdapter
         Try
             cn.Open()
-            Dim cmd As New SqlClient.SqlCommand("SpLLenarDDLVEntaProductos", cn) 'OK
-            cmd.CommandType = CommandType.StoredProcedure
+            'Dim cmd As New SqlClient.SqlCommand("SpLLenarDDLVEntaProductos ", cn) 'OK
+            'cmd.CommandType = CommandType.StoredProcedure
+            Dim cmd As New SqlClient.SqlCommand("select * from RlProductos ", cn)
             RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
             RecibeDatos.Fill(datos)
             cmd.ExecuteReader()
@@ -272,8 +273,9 @@
         Dim RecibeDatos As SqlClient.SqlDataAdapter
         Try
             cn.Open()
-            Dim cmd As New SqlClient.SqlCommand("SpLLenarDDlVentasCategoria", cn) 'OK
-            cmd.CommandType = CommandType.StoredProcedure
+            'Dim cmd As New SqlClient.SqlCommand("SpLLenarDDlVentasCategoria", cn) 'OK
+            'cmd.CommandType = CommandType.StoredProcedure
+            Dim cmd As New SqlClient.SqlCommand("select * from RLProductosCategoria", cn) 'OK
             RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
             RecibeDatos.Fill(datos)
             cmd.ExecuteReader()
@@ -294,8 +296,10 @@
         Dim RecibeDatos As SqlClient.SqlDataAdapter
         Try
             cn.Open()
-            Dim cmd As New SqlClient.SqlCommand("SpLLenarDDlNombreEmpleado", cn) 'ok
-            cmd.CommandType = CommandType.StoredProcedure
+            'Dim cmd As New SqlClient.SqlCommand("SpLLenarDDlNombreEmpleado", cn) 'ok
+            'cmd.CommandType = CommandType.StoredProcedure
+            Dim cmd As New SqlClient.SqlCommand("select * from RLProductosEmpleadoCafeteria", cn) 'ok
+            'cmd.CommandType = CommandType.StoredProcedure
             RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
             RecibeDatos.Fill(datos)
             cmd.ExecuteReader()
@@ -315,8 +319,9 @@
         Dim RecibeDatos As SqlClient.SqlDataAdapter
         Try
             cn.Open()
-            Dim cmd As New SqlClient.SqlCommand("SpDdlProductos", cn) 'ok
-            cmd.CommandType = CommandType.StoredProcedure
+            'Dim cmd As New SqlClient.SqlCommand("SpDdlProductos", cn) 'ok
+            'cmd.CommandType = CommandType.StoredProcedure
+            Dim cmd As New SqlClient.SqlCommand("select * from RLProductos", cn)
             RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
             RecibeDatos.Fill(datos)
             cmd.ExecuteReader()
@@ -360,8 +365,8 @@
         Dim RecibeDatos As SqlClient.SqlDataAdapter
         Try
             cn.Open()
-            Dim cmd As New SqlClient.SqlCommand("SpLLenarDDlNombreCliente", cn) 'ók
-            cmd.CommandType = CommandType.StoredProcedure
+            Dim cmd As New SqlClient.SqlCommand("select * from RLProductosClienteCafeteria", cn) 'ók
+            'cmd.CommandType = CommandType.StoredProcedure
             RecibeDatos = New SqlClient.SqlDataAdapter(cmd)
             RecibeDatos.Fill(datos)
             cmd.ExecuteReader()

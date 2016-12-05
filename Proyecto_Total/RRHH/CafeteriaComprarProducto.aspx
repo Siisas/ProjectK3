@@ -67,7 +67,8 @@
 <body>
 
     <form runat="server">
-        <asp:ScriptManager runat="server"></asp:ScriptManager>
+        cono.tla
+        Kumis<asp:ScriptManager runat="server"></asp:ScriptManager>
         <Control:Header ID="Header" runat="server" />
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
@@ -99,7 +100,7 @@
                             </div>
                             <div class="Space-Form"></div>
 
-                            <div class="Cell-Form">
+                            <div class="Cell-Form"> 
                                 <div class="input-group">
                                     <div class="input-group-addon">Valor</div>
                                     <%--<asp:DropDownList ID="Drl_Valor" CssClass="form-control" Enabled="true" runat="server"></asp:DropDownList>--%>
@@ -112,7 +113,8 @@
                                 <div class="input-group">
                                     <div class="input-group-addon">Nombre del Cliente</div>
                                     <asp:DropDownList ID="Drl_NombreCliente" CssClass="form-control" runat="server"></asp:DropDownList>
-                                </div>
+                                <asp:Label ID="LabelTotal" CssClass="form-control" runat="server"></asp:Label>
+                                     </div>
                             </div>
                         </div>
                         <asp:Button ID="btn_Comprar" CssClass="btn btn-primary" runat="server" Text="Comprar" />
@@ -123,7 +125,7 @@
                         <div class="Cell-Form">
                             <div class="input-group">
                                 <div class="input-group-addon">Total a pagar</div>
-                                <asp:TextBox ID="TxtValorTotal" CssClass="form-control" runat="server"></asp:TextBox>
+                               
                             </div>
                             <div class="bordes" style="overflow: auto; min-height: 0px; max-height: 1000px; width: 100%;">
                                 <asp:GridView ID="Gtg_TotalCompras" runat="server" CellPadding="4" ForeColor="#333333"
